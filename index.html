@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>
+            BLOOD SUGAR LEVEL CALCULATOR
+        </title>
+        <!-- link to Bootstrap minified css-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- link to Jquery minified-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- link to Bootstrap JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- link to fontawesome CSS-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		
+    </head>
+    <body >
+        <div class="container-fluid">
+            <div style="background-color: bisque; color: rgb(3, 3, 43); text-align: center;"><h2> FASTING BLOOD SUGAR LEVEL <br> CALCULATOR</h2></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8" >
+         <form style="padding-top: 10%;">
+            <div class="col-md-6 col-xs-12">
+				<div class="boxDiv">
+					<div class="col-xs-12">
+						<h3 class="cal-title">Enter Your Fasting Blood Sugar (FBS) Reading :</h3>
+					</div>
+					<form action="" method="POST" id="bgForm">
+						<div class="row">
+							<div class="col-xs-12">
+							    <div class="input-group">
+							      	<input type="text" class="form-control" placeholder="Fasting Blood Sugar Reading" id="bgcal1" min="0" max="999" pattern="\d*" maxlength="3" required="true">
+							      	<span class="input-group-addon" id="bgcal11" >mg/dL</span>
+							    </div>
+						  	</div>
+							  <br> <br> <br>
+						  	<div class="col-xs-12">
+							    <div class="input-group FormSubmitDiv">
+								  	<input type="submit" class="btn btn-block submitBtn" id="bgSubmit" value="Calculate now" onClick="myFunc();">
+								</div>
+						  	</div>
+						    <div class="col-xs-12 cal-result-div">
+					    		<h3 class="msgRes"><span class="text-underline">Result:</h3>
+					    		<div id="results"></div>
+						    </div>
+						</div>
+					</form>
+				</div>
+			</div>	
+             
+           </form>
+        </div>
+    </div>
+
+		<script>
+			function myFunc() {
+				mg = document.getElementById("bgcal1").value
+
+				if(mg > 70){
+					document.getElementById("results").innerHTML = "Sugar level is High";
+				} else {
+					document.getElementById("results").innerHTML = "Sugar level is Normal";
+				}
+
+    			event.preventDefault();
+
+				
+			}
+		</script>
+</body>
