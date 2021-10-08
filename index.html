@@ -56,11 +56,15 @@
 			function myFunc() {
 				mg = document.getElementById("bgcal1").value
 
-				if(mg > 70){
+				if(mg > 80){
 					document.getElementById("results").innerHTML = "Sugar level is High";
+				} elseif(mg < 80) {
+					document.getElementById("results").innerHTML = "Sugar level is Very HIGH";
 				} else {
-					document.getElementById("results").innerHTML = "Sugar level is Normal";
+					document.getElementById("results").innerHTML = "Sugar level is Low";
 				}
+					
+				
 
     			event.preventDefault();
 
